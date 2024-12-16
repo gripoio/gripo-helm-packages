@@ -1,0 +1,34 @@
+{{- /*
+This is a Helm template for the cluster configuration.
+It dynamically generates JSON based on the values provided in values.yaml.
+*/ -}}
+{
+  "cloudServiceProvider": "{{ .Values.cloudServiceProvider }}",
+  "clusterConfig": {
+    "name": "{{ .Values.clusterName }}",
+    "credentialRef": "{{ .Values.secretName }}",
+    "resourceGroup": {
+      "name": "{{ .Values.resourceGroupName }}"
+    },
+    "managedCluster": {
+      "name": "{{ .Values.clusterName }}",
+      "location": "{{ .Values.regionName }}",
+      "properties": {
+        "dnsPrefix": "dns-{{ .Values.clusterName }}",
+        "agentPoolProfiles": [
+          {{- range $i, $nodeGroup := .Values.nodeGroups }}
+          {{- if $i }},{{ end }}
+          {
+            "name": "{{ $nodeGroup.name }}",
+            {{- if $nodeGroup.desiredCapacity }}
+            "count": {{ $nodeGroup.desiredCapacity }},
+            {{- end }}
+            "vmSize": "{{ $nodeGroup.instanceType }}",
+            "mode": "{{ if $nodeGroup.privateNetworking }}Private{{ else }}System{{ end }}"
+          }
+          {{- end }}
+        ]
+      }
+    }
+  }
+}

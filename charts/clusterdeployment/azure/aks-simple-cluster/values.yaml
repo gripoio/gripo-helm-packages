@@ -1,0 +1,20 @@
+cloudServiceProvider: "azure"
+clusterName: "basiccluster"
+secretName: "azure_secret"
+resourceGroupName: "DefaultResourceGroup-EUS"
+regionName: "eastus"
+
+nodeGroups:
+  - name: "agentpool1"
+    instanceType: "Standard_DS2_v2"
+    desiredCapacity: 4
+    privateNetworking: false
+    asd
+    asd
+proper:
+  - name: "agentpool1"
+    instanceType: "Standard_DS2_v2"
+    desiredCapacity: 4
+    privateNetworking: false
+    asd
+    asd

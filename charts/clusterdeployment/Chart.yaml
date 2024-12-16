@@ -1,0 +1,19 @@
+apiVersion: v2
+name: clusterdeployment
+description: Parent chart for multi-cloud Kubernetes cluster deployments
+version: 1.0.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: basicCluster
+    version: 0.1.0
+    repository: "file://./azure/basicCluster"
+  - name: aks-simple-cluster
+    version: 0.1.0
+    repository: "file://./azure/aks-simple-cluster"
+  - name: basicCluster
+    version: 0.1.0
+    repository: "file://./aws/basicCluster"
+  - name: advancedCluster
+    version: 0.1.0
+    repository: "file://./aws/advancedCluster"
