@@ -1,18 +1,31 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: cluster-config
-data:
-  cloudServiceProvider: {{ .Values.cloudServiceProvider }}
-  credentialRef: {{ .Values.clusterConfig.credentialRef | default "default-credential" }}
-  createClusterRequest:
-    name: {{ .Values.clusterConfig.createClusterRequest.name }}
-    region: {{ .Values.clusterConfig.createClusterRequest.region }}
-    version: {{ .Values.clusterConfig.createClusterRequest.version }}
-    nodePools:
-      {{- range .Values.clusterConfig.createClusterRequest.nodePools }}
-      - name: {{ .name }}
-        count: {{ .count }}
-        size: {{ .size }}
-      {{- end }}
+{
+  "cloudServiceProvider": "{{ .Values.cloudServiceProvider }}",
+  "clusterConfig": {
+    "name": "{{ .Values.clusterName }}",
+    "credentialRef": "{{ .Values.secretName }}",
+    "resourceGroup": {
+      "name": "{{ .Values.resourceGroupName }}"
+    },
+    "managedCluster": {
+      "name": "{{ .Values.clusterName }}",
+      "location": "{{ .Values.regionName }}",
+      "properties": {
+        "dnsPrefix": "dns-{{ .Values.clusterName }}",
+        "agentPoolProfiles": [
+          {{- range $i, $nodeGroup := .Values.nodeGroups }}
+          {{- if $i }},{{ end }}
+          {
+            "name": "{{ $nodeGroup.name }}",
+            {{- if $nodeGroup.desiredCapacity }}
+            "count": {{ $nodeGroup.desiredCapacity }},
+            {{- end }}
+            "vmSize": "{{ $nodeGroup.instanceType }}",
+            "mode": "{{ if $nodeGroup.privateNetworking }}Private{{ else }}System{{ end }}"
+          }
+          {{- end }}
+        ]
+      }
+    }
+  }
+}
 

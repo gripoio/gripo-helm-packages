@@ -1,36 +1,68 @@
 apiVersion: v1
 entries:
   aks-basic-cluster:
-  - apiVersion: v2
+  - annotations:
+      clusterType: |
+        - "managedCluster"
+        - "managementCluster"
+      provider: azure
+    apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-16T21:03:59.402635607+05:00"
+    created: "2024-12-16T21:41:33.622037589+05:00"
     description: A Helm chart for deploying AKS basic cluster
-    digest: ae508039f7b3a202a14763cb20763f4dbb333b2df81119d00aab82eb5fc4556a
+    digest: d70620df98d007d4c205f0559045f67b87b937831274a0c2e49777cebf8f7c09
+    keywords:
+    - azure
+    - basic
+    - cluster
+    - kubernetes
+    - aks
     name: aks-basic-cluster
     type: application
     urls:
     - packages/aks-basic-cluster-0.1.0.tgz
     version: 0.1.0
   aks-intermediate-cluster:
-  - apiVersion: v2
+  - annotations:
+      clusterType: |
+        - "managedCluster"
+        - "managementCluster"
+      provider: digital
+    apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-16T21:03:59.402843237+05:00"
+    created: "2024-12-16T21:41:33.622350318+05:00"
     description: A Helm chart for deploying AKS intermediate cluster
-    digest: 69142a212fc538c4bd0a85bc0127dee779d33657ff7f2b1a9221825f26c824f2
+    digest: 557dc032b0d3d67776ec30a74a367673ab674f3ed107b5dbe41e39e72be48413
+    keywords:
+    - azure
+    - intermediate
+    - cluster
+    - kubernetes
+    - aks
     name: aks-intermediate-cluster
     type: application
     urls:
     - packages/aks-intermediate-cluster-0.1.0.tgz
     version: 0.1.0
   digital-basic-cluster:
-  - apiVersion: v2
+  - annotations:
+      clusterType: |
+        - "managedCluster"
+        - "managementCluster"
+      provider: digital
+    apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-16T21:03:59.403049195+05:00"
+    created: "2024-12-16T21:41:33.622671467+05:00"
     description: A Helm chart for deploying digital basic cluster
-    digest: 8884b754cd9cb122241358bf625c882975e8c01bc81fbfb1cb6130fa07332abc
+    digest: a7ef78ee9352ee96edea66ab556f8edbdf37277ca15a8b5d3fdb1706276b058d
+    keywords:
+    - digital-ocean
+    - basic
+    - cluster
+    - kubernetes
     name: digital-basic-cluster
     type: application
     urls:
     - packages/digital-basic-cluster-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-16T21:03:59.402316281+05:00"
+generated: "2024-12-16T21:41:33.621710978+05:00"
