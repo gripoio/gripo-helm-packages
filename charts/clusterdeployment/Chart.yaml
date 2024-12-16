@@ -5,15 +5,14 @@ version: 1.0.0
 appVersion: "1.0.0"
 
 dependencies:
-  - name: basicCluster
+  - name: aks-basic-cluster
     version: 0.1.0
-    repository: "file://./azure/basicCluster"
-  - name: aks-simple-cluster
+    repository: "file://azure/aks-basic-cluster"
+  - name: aks-intermediate-cluster
     version: 0.1.0
-    repository: "file://./azure/aks-simple-cluster"
-  - name: basicCluster
+    repository: "file://azure/aks-intermediate-cluster"
+  - name: digital-basic-cluster
     version: 0.1.0
-    repository: "file://./aws/basicCluster"
-  - name: advancedCluster
-    version: 0.1.0
-    repository: "file://./aws/advancedCluster"
+    repository: "file://digital-ocean/digital-basic-cluster"
+
+

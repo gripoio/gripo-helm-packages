@@ -1,0 +1,15 @@
+cloudServiceProvider: digitalocean
+clusterConfig:
+  credentialRef: digital-ocean-secret
+  createClusterRequest:
+    name: docluster
+    region: lon1
+    version: 1.29.1-do.0
+    nodePools:
+      - name: node-group-docluster-1
+        count: 1
+        size: s-2vcpu-2gb
+      - name: node-group-docluster-2
+        count: 4
+        size: s-2vcpu-2gb
+

@@ -1,36 +1,36 @@
 apiVersion: v1
 entries:
-  test1:
+  aks-basic-cluster:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-12-16T19:26:05.037542403+05:00"
-    description: A Helm chart for Kubernetes
-    digest: c338830a0d9c637b9fa628788b8c202251354fb07e5a61b5c398e144ee910a3f
-    name: test1
+    appVersion: 1.0.0
+    created: "2024-12-16T21:03:59.402635607+05:00"
+    description: A Helm chart for deploying AKS basic cluster
+    digest: ae508039f7b3a202a14763cb20763f4dbb333b2df81119d00aab82eb5fc4556a
+    name: aks-basic-cluster
     type: application
     urls:
-    - https://gripoio.github.io/gripo-helm-packages/charts/test1-0.1.0.tgz
+    - packages/aks-basic-cluster-0.1.0.tgz
     version: 0.1.0
-  test2:
+  aks-intermediate-cluster:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-12-16T19:26:05.038679178+05:00"
-    description: A Helm chart for Kubernetes
-    digest: 1512ad9ff0bafc9644c0259ee2c7df171a8d69151676e8a118d1272b5aec584e
-    name: test2
+    appVersion: 1.0.0
+    created: "2024-12-16T21:03:59.402843237+05:00"
+    description: A Helm chart for deploying AKS intermediate cluster
+    digest: 69142a212fc538c4bd0a85bc0127dee779d33657ff7f2b1a9221825f26c824f2
+    name: aks-intermediate-cluster
     type: application
     urls:
-    - https://gripoio.github.io/gripo-helm-packages/charts/test2-0.1.0.tgz
+    - packages/aks-intermediate-cluster-0.1.0.tgz
     version: 0.1.0
-  test3:
+  digital-basic-cluster:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-12-16T19:26:05.039787564+05:00"
-    description: A Helm chart for Kubernetes
-    digest: 44aeffd9e491127f5c87db551d37176e33c77782dde68c22c2276ee1b5bca019
-    name: test3
+    appVersion: 1.0.0
+    created: "2024-12-16T21:03:59.403049195+05:00"
+    description: A Helm chart for deploying digital basic cluster
+    digest: 8884b754cd9cb122241358bf625c882975e8c01bc81fbfb1cb6130fa07332abc
+    name: digital-basic-cluster
     type: application
     urls:
-    - https://gripoio.github.io/gripo-helm-packages/charts/test3-0.1.0.tgz
+    - packages/digital-basic-cluster-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-16T19:26:05.036572842+05:00"
+generated: "2024-12-16T21:03:59.402316281+05:00"
