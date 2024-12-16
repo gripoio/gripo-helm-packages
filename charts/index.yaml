@@ -49,7 +49,7 @@ entries:
       clusterType: |
         - "managedCluster"
         - "managementCluster"
-      provider: digital
+      provider: aws
     apiVersion: v2
     appVersion: 1.0.0
     created: "2024-12-16T21:41:33.622671467+05:00"
