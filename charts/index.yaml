@@ -3,7 +3,7 @@ entries:
   test1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-12-16T18:39:02.049722955+05:00"
+    created: "2024-12-16T19:16:13.068892349+05:00"
     description: A Helm chart for Kubernetes
     digest: c338830a0d9c637b9fa628788b8c202251354fb07e5a61b5c398e144ee910a3f
     name: test1
@@ -14,7 +14,7 @@ entries:
   test2:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-12-16T18:39:02.050622336+05:00"
+    created: "2024-12-16T19:16:13.070413114+05:00"
     description: A Helm chart for Kubernetes
     digest: 1512ad9ff0bafc9644c0259ee2c7df171a8d69151676e8a118d1272b5aec584e
     name: test2
@@ -22,4 +22,15 @@ entries:
     urls:
     - https://github.com/gripoio/gripo-helm-packages/charts/test2-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-16T18:39:02.04857295+05:00"
+  test3:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-12-16T19:16:13.071717382+05:00"
+    description: A Helm chart for Kubernetes
+    digest: 44aeffd9e491127f5c87db551d37176e33c77782dde68c22c2276ee1b5bca019
+    name: test3
+    type: application
+    urls:
+    - https://github.com/gripoio/gripo-helm-packages/charts/test3-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-12-16T19:16:13.067749544+05:00"
