@@ -1,4 +1,4 @@
-name: Helm Package and Index
+name: Helm Package and Index Charts
 
 on:
   push:
@@ -8,31 +8,33 @@ on:
       - gh-pages
 
 jobs:
-  package-and-index:
+  helm-package-and-index:
     runs-on: ubuntu-latest
-
     steps:
       # 1. Checkout repository
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       # 2. Install Helm
-      - name: Install Helm
+      - name: Install Helm CLI
         run: |
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           helm version
 
-      # 4. Package changed charts
+      # 3. Prepare folder structure
+      - name: Create packages directory
+        run: |
+          mkdir -p charts/packages
+
+      # 4. Package Helm charts
       - name: Package Helm Charts
         run: |
-          mkdir -p output
-          for chart in ${{ steps.changed_files.outputs.all_changed_files }}; do
-            chart_dir=$(dirname "$chart")
+          for chart_dir in $(find charts -mindepth 1 -maxdepth 1 -type d ! -name "packages"); do
             echo "Packaging chart: $chart_dir"
-            helm package "$chart_dir" --destination output
+            helm package "$chart_dir" --destination charts/packages
           done
 
-      # 5. Update Helm index
+      # 5. Update Helm repository index
       - name: Generate Helm index.yaml
         run: |
-          helm repo index output
+          helm repo index charts/packages
