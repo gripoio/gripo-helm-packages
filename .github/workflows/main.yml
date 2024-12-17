@@ -5,7 +5,7 @@ on:
     paths:
       - 'charts/**'              # Trigger only when files under charts/ are modified
     branches:
-      - main
+      - gh-pages
 
 jobs:
   package-and-index:
