@@ -1,6 +1,6 @@
 apiVersion: v2
-name: digital-basic-cluster
-description: A Helm chart for deploying digital basic cluster
+name: digital-intermediate-cluster
+description: A Helm chart for deploying digital intermediate cluster
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -31,7 +31,7 @@ annotations:
 
 keywords:
   - digital-ocean
-  - basic
+  - intermediate
   - cluster
   - kubernetes
 
