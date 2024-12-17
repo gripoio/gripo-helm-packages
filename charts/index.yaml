@@ -8,9 +8,9 @@ entries:
       provider: azure
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-17T14:04:36.624173312+05:00"
+    created: "2024-12-17T11:51:49.449394324Z"
     description: A Helm chart for deploying AKS basic cluster
-    digest: 9e5bb400cfa3bfcf144a4f4660280de565271917b1046e68b081710f6724fdd3
+    digest: 0303430855b93571b239aa766db440905d50fab7e4b76a774e56065040b186c8
     keywords:
     - azure
     - basic
@@ -30,9 +30,9 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-17T14:04:36.624587722+05:00"
+    created: "2024-12-17T11:51:49.449566618Z"
     description: A Helm chart for deploying AKS intermediate cluster
-    digest: 4bf23f8a5ed6c0a55edad2190f7e4f2e582fb445b334ba69a840f04823eab777
+    digest: 73ab4d5433dc0f943f261b2998437c9cb85ae1eecfff5e65e700f458da02a776
     keywords:
     - azure
     - intermediate
@@ -52,9 +52,9 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-17T14:04:36.624862961+05:00"
+    created: "2024-12-17T11:51:49.449747407Z"
     description: A Helm chart for deploying digital basic cluster
-    digest: 01944ef61f1219dda5fb978d3cb5f63d8ce2396324b5ab58f781041a0aa4ab2e
+    digest: 3f7d3bc97f443248295f3d707a0e56b9d7ac4f0d2eac98365bb079cf7e98252b
     keywords:
     - digital-ocean
     - basic
@@ -65,4 +65,4 @@ entries:
     urls:
     - packages/digital-basic-cluster-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-17T14:04:36.623659016+05:00"
+generated: "2024-12-17T11:51:49.449063293Z"
