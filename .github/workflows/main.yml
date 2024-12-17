@@ -3,7 +3,7 @@ name: Helm Package and Index Charts
 on:
   push:
     paths:
-      - 'charts/**'              # Trigger only when files under charts/ are modified
+      - 'charts/**'  # Trigger only when files under charts/ are modified
     branches:
       - gh-pages
 
@@ -15,26 +15,40 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Install Helm
-      - name: Install Helm CLI
+      # 2. Install Helm and yq
+      - name: Install Helm and yq
         run: |
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           helm version
+          sudo apt-get install -y yq  # Install yq for YAML parsing
 
-      # 3. Prepare folder structure
-      - name: Create packages directory
+      # 3. Run the custom packaging script
+      - name: Run Helm Package Script
         run: |
-          mkdir -p charts/packages
+          ROOT_DIR="."
+          OUTPUT_DIR="./charts/packages"
 
-      # 4. Package Helm charts
-      - name: Package Helm Charts
-        run: |
-          for chart_dir in $(find charts -mindepth 1 -maxdepth 1 -type d ! -name "packages"); do
-            echo "Packaging chart: $chart_dir"
-            helm package "$chart_dir" --destination charts/packages
+          # Create the output directory if it doesn't exist
+          mkdir -p "$OUTPUT_DIR"
+
+          echo "Checking for updated Helm charts..."
+
+          # Find all Chart.yaml files and package only updated charts
+          find "$ROOT_DIR" -name "Chart.yaml" -print0 | while IFS= read -r -d '' chart; do
+              chart_dir=$(dirname "$chart")
+              chart_name=$(yq eval '.name' "$chart")  # Extract chart name
+              chart_version=$(yq eval '.version' "$chart")  # Extract chart version
+              tgz_file="$OUTPUT_DIR/${chart_name}-${chart_version}.tgz"
+
+              # Check if the chart needs repackaging
+              if [ ! -f "$tgz_file" ] || [ "$chart" -nt "$tgz_file" ]; then
+                  echo "Packaging updated chart: $chart_name"
+                  helm package "$chart_dir" --destination "$OUTPUT_DIR"
+              fi
           done
 
-      # 5. Update Helm repository index
-      - name: Generate Helm index.yaml
-        run: |
-          helm repo index charts/packages
+          # Regenerate the Helm index.yaml
+          echo "Generating Helm repository index..."
+          helm repo index "$OUTPUT_DIR"
+
+          echo "Helm repository index updated successfully."
