@@ -57,3 +57,20 @@ jobs:
           helm repo index "$OUTPUT_DIR"
 
           echo "Helm repository index updated successfully."
+
+      # 4. Commit the packaged charts and index.yaml
+      - name: Commit packaged charts and index.yaml
+        run: |
+          # Configure git
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+
+          # Add the packaged charts and index.yaml
+          git add charts/packages/*
+          git add charts/packages/index.yaml
+
+          # Commit the changes
+          git commit -m "Add packaged Helm charts and update index.yaml"
+
+          # Push the changes back to the repository
+          git push origin gh-pages
