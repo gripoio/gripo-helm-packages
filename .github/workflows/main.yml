@@ -18,15 +18,20 @@ jobs:
       # 2. Install Helm and yq
       - name: Install Helm and yq
         run: |
+          # Install Helm
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           helm version
-          sudo apt-get install -y yq  # Install yq for YAML parsing
+
+          # Install yq (using the correct method for Ubuntu)
+          curl -s https://raw.githubusercontent.com/mikefarah/yq/v4.32.2/install.sh | bash
+          mv ./yq /usr/local/bin/yq  # Move yq to a directory in PATH
+          yq --version  # Verify yq installation
 
       # 3. Run the custom packaging script
       - name: Run Helm Package Script
         run: |
           ROOT_DIR="."
-          OUTPUT_DIR="./charts/packages"
+          OUTPUT_DIR="./charts/test"
 
           # Create the output directory if it doesn't exist
           mkdir -p "$OUTPUT_DIR"
