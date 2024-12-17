@@ -27,6 +27,7 @@ It dynamically generates JSON based on the values provided in values.yaml.
             "mode": "{{ if $nodeGroup.privateNetworking }}Private{{ else }}System{{ end }}"
           }
           {{- end }}
+        
         ]
       }
     }
