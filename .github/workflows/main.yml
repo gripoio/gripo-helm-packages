@@ -54,7 +54,7 @@ jobs:
 
           # Regenerate the Helm index.yaml
           echo "Generating Helm repository index..."
-          helm repo index "$OUTPUT_DIR"
+          helm repo index "./charts/"
 
           echo "Helm repository index updated successfully."
 
@@ -74,7 +74,7 @@ jobs:
 
           # Add the packaged charts and index.yaml
           git add charts/packages/*
-          git add charts/packages/index.yaml
+          git add charts/index.yaml
 
           # Commit the changes
           git commit -m "Add packaged Helm charts and update index.yaml"
