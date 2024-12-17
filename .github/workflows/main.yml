@@ -1,0 +1,53 @@
+name: Helm Package and Index
+
+on:
+  push:
+    paths:
+      - 'charts/**'              # Trigger only when files under charts/ are modified
+    branches:
+      - main
+
+jobs:
+  package-and-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Install Helm
+      - name: Install Helm
+        run: |
+          curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+          helm version
+
+      # 3. Detect changed charts
+      - name: Detect updated charts
+        id: changed_files
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            charts/**/Chart.yaml
+
+      # 4. Package changed charts
+      - name: Package Helm Charts
+        run: |
+          mkdir -p output
+          for chart in ${{ steps.changed_files.outputs.all_changed_files }}; do
+            chart_dir=$(dirname "$chart")
+            echo "Packaging chart: $chart_dir"
+            helm package "$chart_dir" --destination output
+          done
+
+      # 5. Update Helm index
+      - name: Generate Helm index.yaml
+        run: |
+          helm repo index .
+
+      # 6. Deploy to GitHub Pages
+      - name: Deploy Helm Repository to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
