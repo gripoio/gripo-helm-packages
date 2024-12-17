@@ -2,7 +2,7 @@
 This is a Helm template for the cluster configuration.
 It dynamically generates JSON based on the values provided in values.yaml.
 */ -}}
-
+{
   "cloudServiceProvider": "{{ .Values.cloudServiceProvider }}",
   "clusterConfig": {
     "name": "{{ .Values.clusterName }}",
