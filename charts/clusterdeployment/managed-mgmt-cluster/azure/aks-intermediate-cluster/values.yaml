@@ -1,6 +1,6 @@
 cloudServiceProvider: "azure"
 clusterName: "intermediate-cluster"
-secretName: "azure_secret"
+secretName: "azure_secret321"
 resourceGroupName: "DefaultResourceGroup-EUS"
 regionName: "eastus"
 
