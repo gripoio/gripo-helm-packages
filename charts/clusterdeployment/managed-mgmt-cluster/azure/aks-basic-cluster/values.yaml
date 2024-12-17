@@ -6,7 +6,7 @@ regionName: "eastus"
 
 nodeGroups:
   - name: "agentpool1"
-    instanceType: "Standard_DS2_v2kk"
+    instanceType: "Standard_DS2_v2"
     desiredCapacity: 22
     privateNetworking: false
 
