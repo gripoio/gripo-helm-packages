@@ -60,10 +60,17 @@ jobs:
 
       # 4. Commit the packaged charts and index.yaml
       - name: Commit packaged charts and index.yaml
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Using the secret for token authentication
         run: |
           # Configure git
           git config user.name "GitHub Actions"
           git config user.email "github-actions@github.com"
+
+          # Set up authentication for GitHub using the personal access token
+          git remote set-url origin https://github.com/${{ github.repository }}.git
+          git config --global credential.helper store
+          echo "https://x-access-token:${GH_TOKEN}@github.com" > ~/.git-credentials
 
           # Add the packaged charts and index.yaml
           git add charts/packages/*
