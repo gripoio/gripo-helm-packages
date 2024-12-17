@@ -1,0 +1,68 @@
+apiVersion: v1
+entries:
+  aks-basic-cluster:
+  - annotations:
+      clusterType: |
+        - "managedCluster"
+        - "managementCluster"
+      provider: azure
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-17T11:41:17.266843762Z"
+    description: A Helm chart for deploying AKS basic cluster
+    digest: 9e5bb400cfa3bfcf144a4f4660280de565271917b1046e68b081710f6724fdd3
+    keywords:
+    - azure
+    - basic
+    - cluster
+    - kubernetes
+    - aks
+    name: aks-basic-cluster
+    type: application
+    urls:
+    - aks-basic-cluster-0.1.0.tgz
+    version: 0.1.0
+  aks-intermediate-cluster:
+  - annotations:
+      clusterType: |
+        - "managedCluster"
+        - "managementCluster"
+      provider: digital
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-17T11:41:17.267016585Z"
+    description: A Helm chart for deploying AKS intermediate cluster
+    digest: 4bf23f8a5ed6c0a55edad2190f7e4f2e582fb445b334ba69a840f04823eab777
+    keywords:
+    - azure
+    - intermediate
+    - cluster
+    - kubernetes
+    - aks
+    name: aks-intermediate-cluster
+    type: application
+    urls:
+    - aks-intermediate-cluster-0.1.0.tgz
+    version: 0.1.0
+  digital-basic-cluster:
+  - annotations:
+      clusterType: |
+        - "managedCluster"
+        - "managementCluster"
+      provider: digital
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-17T11:41:17.267188336Z"
+    description: A Helm chart for deploying digital basic cluster
+    digest: 01944ef61f1219dda5fb978d3cb5f63d8ce2396324b5ab58f781041a0aa4ab2e
+    keywords:
+    - digital-ocean
+    - basic
+    - cluster
+    - kubernetes
+    name: digital-basic-cluster
+    type: application
+    urls:
+    - digital-basic-cluster-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-12-17T11:41:17.266482567Z"
