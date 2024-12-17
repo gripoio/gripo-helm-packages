@@ -43,11 +43,11 @@ jobs:
       # 5. Update Helm index
       - name: Generate Helm index.yaml
         run: |
-          helm repo index .
+          helm repo index "."
 
       # 6. Deploy to GitHub Pages
       - name: Deploy Helm Repository to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+          publish_dir: .
