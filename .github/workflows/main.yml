@@ -48,8 +48,7 @@ jobs:
               exit 1  # Exit the script with a non-zero status to indicate failure
             else
            # If the command was successful, print the result
-              echo "Helm template output for $chart_dir:"
-              echo "$result"
+              echo "Helm package is tested on $chart_dir"
            fi
           done
 
