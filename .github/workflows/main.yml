@@ -22,14 +22,6 @@ jobs:
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           helm version
 
-      # 3. Detect changed charts
-      - name: Detect updated charts
-        id: changed_files
-        uses: tj-actions/changed-files@v34
-        with:
-          files: |
-            charts/**/Chart.yaml
-
       # 4. Package changed charts
       - name: Package Helm Charts
         run: |
