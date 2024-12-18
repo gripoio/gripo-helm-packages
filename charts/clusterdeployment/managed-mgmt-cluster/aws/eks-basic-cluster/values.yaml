@@ -5,7 +5,7 @@ resourceGroupName: "DefaultResourceGroup-EUS"
 regionName: "eastus"
 
 nodeGroups:
-  - name: "agentpool1123123"
+  - name: "testing"
     instanceType: "Standard_DS2_v2"
     desiredCapacity: 22
     privateNetworking: false
