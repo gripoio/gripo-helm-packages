@@ -1,0 +1,49 @@
+cloudServiceProvider: "DigitalOcean"
+clusterName: "my-cluster"
+secretName: "my-secret"
+resourceGroupName: "my-resource-group"
+regionName: "NYC1"
+
+nodeGroups:
+  - name: "node-group-1"
+    desiredCapacity: 3
+    instanceType: "s-2vcpu-4gb"
+    privateNetworking: true
+    enableAutoScaling: true
+    maxCapacity: 5
+    minCapacity: 2
+    nodePoolVersion: "v1.21.5"
+    nodeLabels:
+      "role": "worker"
+      "environment": "production"
+    taints:
+      - key: "special-taint"
+        value: "true"
+        effect: "NoSchedule"
+    osType: "linux"
+    storage: "ssd"
+    networkPolicy: "calico"
+    volumeSize: 50
+    volumeType: "ssd"
+    advancedFeatures:
+      - "featureX"
+      - "featureY"
+    nodeSchedulingPolicy: "preferential"
+    networkConfig:
+      cidr: "10.10.0.0/24"
+      gateway: "10.10.0.1"
+    integratedServices:
+      - "load-balancer"
+      - "monitoring"
+    userManagedIdentity: "my-managed-identity"
+    additionalConfigurations:
+      - "configX: valueX"
+      - "configY: valueY"
+  - name: "node-group-2"
+    desiredCapacity: 2
+    instanceType: "s-1vcpu-2gb"
+    privateNetworking: false
+    enableAutoScaling: false
+    maxCapacity: 3
+    minCapacity: 1
+

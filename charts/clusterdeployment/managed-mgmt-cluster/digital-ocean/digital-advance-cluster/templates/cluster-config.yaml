@@ -1,0 +1,90 @@
+{
+cloudServiceProvider: "{{ .Values.cloudServiceProvider }}",
+clusterConfig: {
+  name: "{{ .Values.clusterName }}",
+  credentialRef: "{{ .Values.secretName }}",
+  resourceGroup: {
+    name: "{{ .Values.resourceGroupName }}"
+  },
+  managedCluster: {
+    name: "{{ .Values.clusterName }}",
+    location: "{{ .Values.regionName }}",
+    properties: {
+      dnsPrefix: "dns-{{ .Values.clusterName }}",
+      agentPoolProfiles: [
+        {{- range $i, $nodeGroup := .Values.nodeGroups }}
+        {{- if $i }},{{ end }}
+        {
+          name: "{{ $nodeGroup.name }}",
+          {{- if $nodeGroup.desiredCapacity }}
+          count: {{ $nodeGroup.desiredCapacity }},
+          {{- end }}
+          vmSize: "{{ $nodeGroup.instanceType }}",
+          mode: "{{ if $nodeGroup.privateNetworking }}Private{{ else }}System{{ end }}",
+          
+          # Intermediate Settings
+          {{- if $nodeGroup.nodePoolVersion }}
+          nodePoolVersion: "{{ $nodeGroup.nodePoolVersion }}",
+          {{- end }}
+          {{- if $nodeGroup.enableAutoScaling }}
+          enableAutoScaling: {{ $nodeGroup.enableAutoScaling }},
+          {{- end }}
+          {{- if $nodeGroup.maxCapacity }}
+          maxCapacity: {{ $nodeGroup.maxCapacity }},
+          {{- end }}
+          {{- if $nodeGroup.minCapacity }}
+          minCapacity: {{ $nodeGroup.minCapacity }},
+          {{- end }}
+          {{- if $nodeGroup.nodeLabels }}
+          nodeLabels: {{ $nodeGroup.nodeLabels | toJson }},
+          {{- end }}
+          {{- if $nodeGroup.taints }}
+          taints: {{ $nodeGroup.taints | toJson }},
+          {{- end }}
+          {{- if $nodeGroup.osType }}
+          osType: "{{ $nodeGroup.osType }}",
+          {{- end }}
+          {{- if $nodeGroup.diagnostics }}
+          diagnostics: {{ $nodeGroup.diagnostics | toJson }},
+          {{- end }}
+          {{- if $nodeGroup.storage }}
+          storage: "{{ $nodeGroup.storage }}",
+          {{- end }}
+          {{- if $nodeGroup.networkPolicy }}
+          networkPolicy: "{{ $nodeGroup.networkPolicy }}",
+          {{- end }}
+          {{- if $nodeGroup.vmType }}
+          vmType: "{{ $nodeGroup.vmType }}",
+          {{- end }}
+          {{- if $nodeGroup.volumeSize }}
+          volumeSize: "{{ $nodeGroup.volumeSize }}",
+          {{- end }}
+          {{- if $nodeGroup.volumeType }}
+          volumeType: "{{ $nodeGroup.volumeType }}",
+          {{- end }}
+          {{- if $nodeGroup.advancedFeatures }}
+          advancedFeatures: {{ $nodeGroup.advancedFeatures | toJson }},
+          {{- end }}
+          {{- if $nodeGroup.nodeSchedulingPolicy }}
+          nodeSchedulingPolicy: "{{ $nodeGroup.nodeSchedulingPolicy }}",
+          {{- end }}
+          {{- if $nodeGroup.networkConfig }}
+          networkConfig: {{ $nodeGroup.networkConfig | toJson }},
+          {{- end }}
+          {{- if $nodeGroup.integratedServices }}
+          integratedServices: {{ $nodeGroup.integratedServices | toJson }},
+          {{- end }}
+          {{- if $nodeGroup.userManagedIdentity }}
+          userManagedIdentity: "{{ $nodeGroup.userManagedIdentity }}",
+          {{- end }}
+          {{- if $nodeGroup.additionalConfigurations }}
+          additionalConfigurations: {{ $nodeGroup.additionalConfigurations | toJson }},
+          {{- end }}
+        }
+        {{- end }}
+      ]
+    }
+  }
+}
+}
+
