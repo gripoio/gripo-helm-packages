@@ -8,7 +8,7 @@ entries:
       provider: azure
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T11:05:08.51750928Z"
+    created: "2024-12-18T11:17:55.746319192Z"
     description: A Helm chart for deploying AKS advance cluster
     digest: 0e2eea0c3295c2a851f2ea69a8b57f78fafaffce2980bf7ec23f35171d847ea6
     keywords:
@@ -30,7 +30,7 @@ entries:
       provider: azure
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T11:05:08.517696011Z"
+    created: "2024-12-18T11:17:55.746626114Z"
     description: A Helm chart for deploying AKS basic cluster
     digest: cc0a7e6a0eed6a131c0a337c6f0b83f92774d78e94b3cc8b17f67c9d06caf70f
     keywords:
@@ -52,7 +52,7 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T11:05:08.518040359Z"
+    created: "2024-12-18T11:17:55.746905074Z"
     description: A Helm chart for deploying AKS intermediate cluster
     digest: 599ed9cb6d5793e561268d7bd32b055a0d5662257d913721d92f202fc8863879
     keywords:
@@ -74,7 +74,7 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T11:05:08.518204908Z"
+    created: "2024-12-18T11:17:55.747200595Z"
     description: A Helm chart for deploying digital basic cluster
     digest: a9314bfc1d6fdccd73ece1b4b196ceabcdc7be197c14f1896d17983175167664
     keywords:
@@ -95,7 +95,27 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T11:05:08.518457714Z"
+    created: "2024-12-18T11:17:55.748168119Z"
+    description: A Helm chart for deploying digital intermediate cluster
+    digest: 9f1a9a30ec9fb6af214311041a0a6341043b82b7c9532e2ca05d6b3a930281a1
+    keywords:
+    - digital-ocean
+    - intermediate
+    - cluster
+    - kubernetes
+    name: digital-intermediate-cluster
+    type: application
+    urls:
+    - packages/digital-intermediate-cluster-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
+      clusterType: |
+        - "managedCluster"
+        - "managementCluster"
+      provider: digital
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-18T11:17:55.74767549Z"
     description: A Helm chart for deploying digital intermediate cluster
     digest: a4000ff1c381d885dd5a832f9da7e43b63ad55ab9057463743cbd185ace838a9
     keywords:
@@ -108,4 +128,4 @@ entries:
     urls:
     - packages/digital-intermediate-cluster-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-18T11:05:08.517217651Z"
+generated: "2024-12-18T11:17:55.745753507Z"
