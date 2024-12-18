@@ -1,5 +1,5 @@
 cloudServiceProvider: "azure"
-clusterName: "advance-cluster"
+clusterName: "basiccluster"
 secretName: "azure_secret"
 resourceGroupName: "DefaultResourceGroup-EUS"
 regionName: "eastus"
