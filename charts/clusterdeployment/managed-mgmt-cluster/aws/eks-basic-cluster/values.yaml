@@ -1,6 +1,6 @@
-cloudServiceProvider: "azure"
-clusterName: "advance-cluster"
-secretName: "azure_secret"
+cloudServiceProvider: "eks"
+clusterName: "basic-cluster"
+secretName: "aws_secret"
 resourceGroupName: "DefaultResourceGroup-EUS"
 regionName: "eastus"
 
