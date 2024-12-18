@@ -8,7 +8,7 @@ entries:
       provider: azure
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.482526448Z"
+    created: "2024-12-18T19:07:09.651112909Z"
     description: A Helm chart for deploying AKS advance cluster
     digest: 0e2eea0c3295c2a851f2ea69a8b57f78fafaffce2980bf7ec23f35171d847ea6
     keywords:
@@ -30,7 +30,7 @@ entries:
       provider: azure
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.482704189Z"
+    created: "2024-12-18T19:07:09.65167902Z"
     description: A Helm chart for deploying AKS basic cluster
     digest: cc0a7e6a0eed6a131c0a337c6f0b83f92774d78e94b3cc8b17f67c9d06caf70f
     keywords:
@@ -52,7 +52,7 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.482950577Z"
+    created: "2024-12-18T19:07:09.652359034Z"
     description: A Helm chart for deploying AKS intermediate cluster
     digest: 599ed9cb6d5793e561268d7bd32b055a0d5662257d913721d92f202fc8863879
     keywords:
@@ -74,7 +74,7 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.483217674Z"
+    created: "2024-12-18T19:07:09.653066688Z"
     description: A Helm chart for deploying digital advance cluster
     digest: c5b71e31e90820046e7257d66f2633bcd70a4d10d4a8f8844518a970bb0a3417
     keywords:
@@ -95,7 +95,7 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.483393741Z"
+    created: "2024-12-18T19:07:09.653396486Z"
     description: A Helm chart for deploying digital basic cluster
     digest: a9314bfc1d6fdccd73ece1b4b196ceabcdc7be197c14f1896d17983175167664
     keywords:
@@ -116,7 +116,7 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.483904111Z"
+    created: "2024-12-18T19:07:09.654372702Z"
     description: A Helm chart for deploying digital intermediate cluster
     digest: 9f1a9a30ec9fb6af214311041a0a6341043b82b7c9532e2ca05d6b3a930281a1
     keywords:
@@ -136,7 +136,7 @@ entries:
       provider: digital
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.483662802Z"
+    created: "2024-12-18T19:07:09.653840916Z"
     description: A Helm chart for deploying digital intermediate cluster
     digest: a4000ff1c381d885dd5a832f9da7e43b63ad55ab9057463743cbd185ace838a9
     keywords:
@@ -157,7 +157,7 @@ entries:
       provider: aws
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.484391738Z"
+    created: "2024-12-18T19:07:09.654996211Z"
     description: A Helm chart for deploying AWS basic cluster
     digest: fc3395e89182dc4f74319b449e33cf972d4c99b43a279ba9c62f2e0ff5040625
     keywords:
@@ -178,7 +178,7 @@ entries:
       provider: aws
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-12-18T19:00:09.484064549Z"
+    created: "2024-12-18T19:07:09.654692952Z"
     description: A Helm chart for deploying AWS basic cluster
     digest: db5249b9649c396ca97ff6a2a0a58c802d9082b66182a6a0c65082aea20e8bf3
     keywords:
@@ -192,4 +192,4 @@ entries:
     urls:
     - packages/eks-basic-cluster-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-18T19:00:09.482208567Z"
+generated: "2024-12-18T19:07:09.650565253Z"
